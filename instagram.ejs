@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Page</title>
+    <style>
+      .Imgposts {
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>This is the page belongs to: <%= data.name %></h2>
+    <button>Follow</button>
+    <button>Message</button>
+    <h3>
+      Followers:<%= data.followers %> &nbsp; &nbsp; &nbsp; Following:<%=
+      data.following %>
+    </h3>
+    <hr />
+
+    <% for(let post of data.posts){ %>
+    <img class="ImgPosts" src="<%= post.image %>" alt="some image" />
+    <p>
+      Likes:<%= post.likes %> &nbsp; &nbsp; &nbsp; Comments:<%= post.comments %>
+    </p>
+    <% } %>
+  </body>
+</html>
